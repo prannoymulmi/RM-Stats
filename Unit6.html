@@ -7670,15 +7670,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><p>Results: Diet A (Sample Size =50)</p>
-<table>
+<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><h3 id="Results:-Diet-A-(Sample-Size-=50)">Results: Diet A (Sample Size =50)<a class="anchor-link" href="#Results:-Diet-A-(Sample-Size-=50)">¶</a></h3><table>
 <thead>
 <tr>
 <th>Mean</th>
 <th>Median</th>
 <th>Standard Deviation</th>
 <th>Q1</th>
-<th>Q2</th>
+<th>Q3</th>
 <th>IQR</th>
 </tr>
 </thead>
@@ -7693,15 +7692,14 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>Result: Diet B (Sample Size =50)</p>
-<table>
+<h3 id="Result:-Diet-B-(Sample-Size-=50)">Result: Diet B (Sample Size =50)<a class="anchor-link" href="#Result:-Diet-B-(Sample-Size-=50)">¶</a></h3><table>
 <thead>
 <tr>
 <th>Mean</th>
 <th>Median</th>
 <th>Standard Deviation</th>
 <th>Q1</th>
-<th>Q2</th>
+<th>Q3</th>
 <th>IQR</th>
 </tr>
 </thead>
@@ -7719,6 +7717,192 @@ a.anchor-link {
 <h3 id="Exercise-6.1">Exercise 6.1<a class="anchor-link" href="#Exercise-6.1">¶</a></h3><p><img alt="alt text" src="data/ex6-2.png"/></p>
 <p>Looking at the Standard deviations of both Diet A (2.536) and Diet B (2.769) the deviations of the weight loss from are very similar and both data diets exhibit similar variability, However, the mean for Diet A shows a better weight loss of 1.6 kg on average on this sample size of 50, which suggests that Diet A should be preferred.</p>
 <h3 id="Exercise-6.2">Exercise 6.2<a class="anchor-link" href="#Exercise-6.2">¶</a></h3><p><img alt="alt text" src="data/ex6-2.png"/></p>
+<p>Looking at the sample interquartile range (IQR) for Diet A(3.285) and Diet B (3.451), it can been observed that IQR for Diet B is a bit higher than of Diet A, suggesting that Diet B has is more inconsistent as it has more varying data compared to Diet A. To conclude, Diet A presents a more consistent and effective weight loss compared to Diet B, as the median is higher for Diet A presenting higher effectiveness and more consistent because of less variability due to narrower IQR.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bd9e2cc63fa15c3f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">'data/Exe8.3D.xlsx'</span>  <span class="c1"># Update this to the path of your Excel file</span>
+<span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">'Sheet1'</span>  <span class="c1"># Update this with the name of your sheet if needed</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="n">sheet_name</span><span class="p">)</span>
+<span class="c1"># Specify the columns</span>
+<span class="n">area_cl</span> <span class="o">=</span> <span class="s1">'Area'</span>
+<span class="n">brand_cl</span> <span class="o">=</span> <span class="s1">'Brand'</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="n">area_cl</span><span class="p">,</span> <span class="n">brand_cl</span><span class="p">]])</span>
+
+<span class="c1"># Filter the DataFrame where Diet has Area 2</span>
+<span class="n">filtered_df_area_1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">area_cl</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">),</span> <span class="n">brand_cl</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>     Area  Brand
+0       1      B
+1       1  Other
+2       1      A
+3       1      B
+4       1  Other
+..    ...    ...
+155     2      A
+156     2      B
+157     2      B
+158     2  Other
+159     2  Other
+
+[160 rows x 2 columns]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=599607d33beccfbd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Frequencies-Calculation">Frequencies Calculation<a class="anchor-link" href="#Frequencies-Calculation">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=824563c631b7d589">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">filtered_brand_A</span> <span class="o">=</span> <span class="n">filtered_df_area_1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">'A'</span><span class="p">]</span>
+<span class="n">filtered_brand_B</span> <span class="o">=</span> <span class="n">filtered_df_area_1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">'B'</span><span class="p">]</span>
+<span class="n">filtered_brand_other</span> <span class="o">=</span> <span class="n">filtered_df_area_1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">'Other'</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_df_area_1</span><span class="p">)</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A: </span><span class="si">{</span><span class="n">filtered_brand_A</span><span class="si">}</span><span class="s2">, B:</span><span class="si">{</span><span class="n">filtered_brand_B</span><span class="si">}</span><span class="s2">, Other:</span><span class="si">{</span><span class="n">filtered_brand_other</span><span class="si">}</span><span class="s2">, Total:</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>'A: 19, B:30, Other:41, Total:90'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ada6741faf385794">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Frequency-Percentage">Frequency Percentage<a class="anchor-link" href="#Frequency-Percentage">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=218346c40c01adf7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">filtered_brand_A_per</span> <span class="o">=</span> <span class="p">(</span><span class="n">filtered_df_area_1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">'A'</span><span class="p">]</span><span class="o">/</span><span class="n">total</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">filtered_brand_B_per</span> <span class="o">=</span> <span class="p">(</span><span class="n">filtered_df_area_1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">'B'</span><span class="p">]</span><span class="o">/</span><span class="n">total</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">filtered_brand_other_per</span> <span class="o">=</span> <span class="p">(</span><span class="n">filtered_df_area_1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">'Other'</span><span class="p">]</span><span class="o">/</span><span class="n">total</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">total_per</span> <span class="o">=</span><span class="n">filtered_brand_A_per</span> <span class="o">+</span> <span class="n">filtered_brand_B_per</span> <span class="o">+</span> <span class="n">filtered_brand_other_per</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A %: </span><span class="si">{</span><span class="n">filtered_brand_A_per</span><span class="si">}</span><span class="s2">, B%:</span><span class="si">{</span><span class="n">filtered_brand_B</span><span class="si">}</span><span class="s2">, Other%:</span><span class="si">{</span><span class="n">filtered_brand_other_per</span><span class="si">}</span><span class="s2">, Total%:</span><span class="si">{</span><span class="n">total_per</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>'A %: 21.11111111111111, B%:30, Other%:45.55555555555556, Total%:100.0'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=832abd9d1337c663">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><h3 id="Frequencies-for-Area-2">Frequencies for Area 2<a class="anchor-link" href="#Frequencies-for-Area-2">¶</a></h3><table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Other</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19</td>
+<td>30</td>
+<td>41</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Frequencies-Percentage">Frequencies Percentage<a class="anchor-link" href="#Frequencies-Percentage">¶</a></h3><table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Other</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21.11</td>
+<td>33.33</td>
+<td>45.56</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Exercise-6.3">Exercise 6.3<a class="anchor-link" href="#Exercise-6.3">¶</a></h3><p><img alt="alt text" src="data/ex6-3.png"/></p>
+<p>Looking at the frequency for Area 1 and Area 2, both of the areas prefer some Other brand of Cereal with Area 1 having 60% and Area 2 having 45.6%. However, larger percentage of people from Area 1 preferred the other brand in comparison to Area 2.</p>
 </div>
 </div>
 </div>
